@@ -1,0 +1,2446 @@
+/* Reset default styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9F7EB;
+    color: #333;
+    min-height: 100vh;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    min-height: 100vh;
+    gap: 2rem;
+    padding-top: 100px;
+    background-color: #F9F7EB;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    padding-right: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+    font-family: 'GoodTimingBD', sans-serif;
+    font-weight: 600;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    width: 450px;
+}
+
+.buy-button {
+    background: linear-gradient(-45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
+    background-size: 400% 400%;
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    animation: gradientBG 3s ease infinite;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.buy-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    animation: gradientBG 1s ease infinite;
+}
+
+.buy-button:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.buy-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(-45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
+    background-size: 400% 400%;
+    border-radius: 50px;
+    z-index: -1;
+    animation: gradientBG 3s ease infinite;
+    filter: blur(10px);
+}
+
+
+/* Add shine effect */
+
+.buy-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient( to bottom right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+
+/* Add animations */
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+
+/* Pulse animation for extra attention */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Add responsive styles for buy button */
+
+@media screen and (max-width: 768px) {
+    .buy-button {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buy-button {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    .hero-image {
+        order: -1;
+        max-width: 350px;
+    }
+    .hero-image img {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    .buy-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    .hero-image {
+        max-width: 300px;
+    }
+    .hero-image img {
+        width: 250px;
+    }
+}
+
+
+/* Скидання стилів */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #F9F7EB;
+    color: #333;
+}
+
+
+/* Add a dark overlay to make the background image darker */
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black overlay with 50% opacity */
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 90vh;
+}
+
+.header {
+    margin-top: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    /* Center vertically */
+}
+
+.main-logo {
+    display: none;
+}
+
+.title {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    font-family: 'Black Ops One', cursive;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in forwards;
+    opacity: 0;
+}
+
+
+/* Единые стили для слогана */
+
+.slogan {
+    font-size: 40px;
+    gap: 8px;
+    padding: 0 10px;
+    max-width: 95%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allow wrapping for better fit */
+    font-family: 'Black Ops One', cursive;
+    letter-spacing: 1px;
+    /* Reduced letter spacing */
+    margin: 10px auto;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.slogan span {
+    display: inline-block;
+    margin: 0 5px;
+    white-space: nowrap;
+    /* Keep each word together */
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        background-position: 100% 50%;
+        text-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        background-position: 0% 50%;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+}
+
+
+/* Обновляем задержки для каждого слова */
+
+.slogan span:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.slogan span:nth-child(2) {
+    animation-delay: 1.3s;
+}
+
+.slogan span:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+.slogan span:nth-child(4) {
+    animation-delay: 1.9s;
+}
+
+.slogan span:nth-child(5) {
+    animation-delay: 2.2s;
+}
+
+.slogan span:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.slogan span:nth-child(7) {
+    animation-delay: 2.8s;
+}
+
+
+/* Убираем подчеркивание при наведении */
+
+.slogan span::after {
+    display: none;
+}
+
+.progress-bar {
+    background-color: #444;
+    width: 80%;
+    max-width: 800px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar:hover {
+    background-color: #555;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.progress-bar:hover::before {
+    left: 100%;
+    transition: 0.5s;
+}
+
+.progress-text {
+    color: white;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.progress-bar:hover .progress-text {
+    letter-spacing: 3px;
+}
+
+
+/* Обновляем стили для иконок */
+
+.icons {
+    display: none;
+    /* Скрываем старый контейнер */
+}
+
+.social-icons-left {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 4.6s;
+}
+
+.social-icons-right {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 4.6s;
+}
+
+.social-icons-left img,
+.social-icons-right img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s;
+}
+
+.social-icons-left img:hover,
+.social-icons-right img:hover {
+    transform: scale(1.2);
+}
+
+
+/* Медиа-запросы для иконок */
+
+@media screen and (max-width: 768px) {
+    .social-icons-left,
+    .social-icons-right {
+        top: 15px;
+    }
+    .social-icons-left {
+        left: 15px;
+    }
+    .social-icons-right {
+        right: 15px;
+    }
+    .social-icons-left img,
+    .social-icons-right img {
+        width: 25px;
+        height: 25px;
+    }
+    body {
+        background-color: #1a1a1a;
+        background-size: auto 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .social-icons-left,
+    .social-icons-right {
+        top: 15px;
+    }
+    .social-icons-left {
+        left: 15px;
+    }
+    .social-icons-right {
+        right: 15px;
+    }
+    .social-icons-left img,
+    .social-icons-right img {
+        width: 25px;
+        height: 25px;
+    }
+    body {
+        background-color: #1a1a1a;
+        background-size: auto 100%;
+    }
+}
+
+@font-face {
+    font-family: 'GoodTimingBD';
+    /* Назва шрифту */
+    src: url('./GoodTimingBD.ttf') format('truetype');
+    /* Шлях до файлу */
+    font-weight: normal;
+    /* За потреби можна додати інші варіанти */
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'GoodTimingBD', sans-serif;
+}
+
+
+/* Добавляем медиа-запросы для мобильных устройств */
+
+@media screen and (max-width: 768px) {
+    .main-logo {
+        width: 150px;
+    }
+    .title {
+        font-size: 3.5rem;
+    }
+    .slogan {
+        font-size: 30px;
+        gap: 6px;
+    }
+    .progress-bar {
+        width: 90%;
+        height: 40px;
+    }
+    .progress-text {
+        font-size: 20px;
+    }
+    .icons {
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        /* позволяет иконкам переноситься на новую строку */
+    }
+    .icons img {
+        width: 39px;
+        height: 39px;
+    }
+    .icons a:nth-child(3) img {
+        width: 52px;
+        height: auto;
+    }
+    body {
+        background-size: auto 100%;
+        background-position: top center;
+        background-color: #1a1a1a;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+    .main-logo {
+        width: 120px;
+    }
+    .title {
+        font-size: 2.5rem;
+        margin: 10px 0;
+    }
+    .slogan {
+        font-size: 24px;
+        gap: 4px;
+        padding: 0 5px;
+    }
+    .progress-bar {
+        height: 35px;
+    }
+    .progress-text {
+        font-size: 16px;
+    }
+    .icons {
+        gap: 10px;
+    }
+    .icons img {
+        width: 33px;
+        height: 33px;
+    }
+    .icons a:nth-child(3) img {
+        width: 44px;
+        height: auto;
+    }
+    body {
+        background-size: auto 100%;
+        background-position: top center;
+        background-color: #1a1a1a;
+    }
+}
+
+
+/* Добавляем контейнер для частиц */
+
+.particles {
+    display: none;
+}
+
+
+/* Создаем частицы */
+
+.particle {
+    display: none;
+}
+
+
+/* Генерируем 20 частиц с разными анимациями */
+
+@for $i from 1 through 20 {
+    .particle:nth-child(#{$i}) {
+        left: random(100) * 1%;
+        animation: particleFloat#{$i} #{random(15) + 10}s linear infinite;
+    }
+    @keyframes particleFloat#{$i} {
+        0% {
+            transform: translateY(-100%) rotate(0deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.5;
+        }
+        80% {
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+}
+
+
+/* Удаляем старые анимации линий */
+
+.container::before,
+.container::after {
+    display: none;
+    /* или можно полностью удалить этот блок кода */
+}
+
+
+/* Удаляем анимацию сканирующей линии */
+
+.scan-line {
+    display: none;
+    /* или можно полностью удалить этот блок кода */
+}
+
+
+/* Удаляем связанные keyframes */
+
+@keyframes linePulse {
+    /* можно удалить полностью */
+}
+
+@keyframes scan {
+    /* можно удалить полностью */
+}
+
+
+/* Эффект боевого духа */
+
+.impact-wave {
+    display: none;
+}
+
+
+/* Эффект ударных следов */
+
+.strike-trails {
+    display: none;
+}
+
+
+/* Эффект энергетического поля */
+
+.energy-field {
+    display: none;
+}
+
+
+/* Эффект энергетических вспышек */
+
+.energy-flash {
+    display: none;
+}
+
+
+/* Эффект боевой ауры */
+
+.combat-aura {
+    display: none;
+}
+
+
+/* Медиа-запросы для анимаций */
+
+@media screen and (max-width: 768px) {
+    .wave {
+        display: none;
+        /* Отключаем тяжелые анимации на мобильных */
+    }
+    .combat-aura {
+        opacity: 0.1;
+    }
+}
+
+
+/* Обновленные стили для статистики */
+
+.stats-container {
+    position: fixed;
+    top: 80px;
+    /* Give space for social icons */
+    right: 30px;
+    /* Changed from left to right */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: right;
+    /* Align text to right */
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align items to right */
+    padding: 5px 15px;
+    background: transparent;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: right;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 2s;
+    /* Start stats sooner */
+}
+
+.stat-item:nth-child(1) {
+    animation-delay: 2.2s;
+}
+
+.stat-item:nth-child(2) {
+    animation-delay: 2.4s;
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 2.6s;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-family: 'Black Ops One', cursive;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: 'Black Ops One', cursive;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Убираем старые эффекты */
+
+.stat-item::before,
+.stat-label::after {
+    display: none;
+}
+
+
+/* Медиа-запросы для адаптивности */
+
+@media screen and (max-width: 768px) {
+    .stats-container {
+        top: 60px;
+        right: 20px;
+    }
+    .header {
+        min-height: 50vh;
+    }
+    .stat-number {
+        font-size: 3rem;
+    }
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stats-container {
+        top: 50px;
+        right: 15px;
+    }
+    .header {
+        min-height: 40vh;
+    }
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Новая анимация для заголовка */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Обновляем стили для боевой стойки */
+
+.fighting-stance {
+    display: none;
+}
+
+
+/* Медиа-запросы для первого силуэта */
+
+@media screen and (max-width: 768px) {
+    .fighting-stance {
+        width: 400px;
+        height: 600px;
+        right: -100px;
+        bottom: 15%;
+        opacity: 0.1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fighting-stance {
+        width: 300px;
+        height: 450px;
+        right: -80px;
+        bottom: 10%;
+    }
+}
+
+
+/* Удаляем старые стили линий и добавляем новые эффекты */
+
+
+/* Эффект ударных следов */
+
+.strike-trails {
+    display: none;
+}
+
+
+/* Эффект энергетических вспышек */
+
+.energy-flash {
+    display: none;
+}
+
+
+/* Эффект энергетического поля */
+
+.energy-field {
+    display: none;
+}
+
+
+/* Эффект вспышек */
+
+.power-sparks {
+    display: none;
+}
+
+.spark {
+    display: none;
+}
+
+
+/* Медиа-запросы для оптимизации на мобильных устройствах */
+
+@media screen and (max-width: 768px) {
+    .strike {
+        width: 50px;
+    }
+    .energy-field {
+        opacity: 0.2;
+    }
+    .spark {
+        width: 2px;
+        height: 2px;
+    }
+}
+
+
+/* Добавляем стили для дополнительных силуэтов */
+
+.fighting-stance-2 {
+    display: none;
+}
+
+.fighting-stance-3 {
+    display: none;
+}
+
+
+/* Медиа-запросы для дополнительных силуэтов */
+
+@media screen and (max-width: 768px) {
+    .fighting-stance-2 {
+        width: 300px;
+        height: 450px;
+        left: -50px;
+        top: -100px;
+        opacity: 0.08;
+    }
+    .fighting-stance-3 {
+        width: 250px;
+        height: 375px;
+        left: 50%;
+        top: 35%;
+        opacity: 0.08;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fighting-stance-2 {
+        width: 200px;
+        height: 300px;
+        left: -30px;
+        top: -80px;
+    }
+    .fighting-stance-3 {
+        width: 180px;
+        height: 270px;
+        left: 40%;
+        top: 40%;
+    }
+}
+
+
+/* Добавляем четвертый силуэт */
+
+.fighting-stance-4 {
+    display: none;
+}
+
+
+/* Обновляем анимацию для четвертого силуэта */
+
+@keyframes stanceFloat4 {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0) rotate(3deg);
+        filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.3));
+    }
+    50% {
+        transform: translateX(-50%) translateY(-12px) rotate(-2deg);
+        filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.4));
+    }
+}
+
+
+/* Обновляем медиа-запросы */
+
+@media screen and (max-width: 768px) {
+    .fighting-stance-4 {
+        width: 280px;
+        height: 420px;
+        left: 50%;
+        opacity: 0.08;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fighting-stance-4 {
+        width: 200px;
+        height: 300px;
+        left: 50%;
+    }
+}
+
+
+/* Добавляем пятый силуэт */
+
+.fighting-stance-5 {
+    display: none;
+}
+
+
+/* Добавляем анимацию для пятого силуэта */
+
+@keyframes stanceFloat5 {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+        filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.3));
+    }
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+        filter: drop-shadow(0 0 30px rgba(255, 69, 0, 0.4));
+    }
+}
+
+
+/* Обновляем медиа-запросы для пятого силуэта */
+
+@media screen and (max-width: 768px) {
+    .fighting-stance-5 {
+        width: 280px;
+        height: 420px;
+        left: -10px;
+        bottom: -8%;
+        opacity: 0.08;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fighting-stance-5 {
+        width: 200px;
+        height: 300px;
+        left: -5px;
+        bottom: -5%;
+    }
+}
+
+
+/* Обновляем стили для основного изображения */
+
+.main-image {
+    display: none;
+}
+
+
+/* Обновляем анимацию для мобильных устройств */
+
+@media screen and (max-width: 768px) {
+    @keyframes imageFloat {
+        0%,
+        100% {
+            transform: scale(1);
+            filter: grayscale(100%) contrast(130%) brightness(1.1);
+        }
+        50% {
+            transform: scale(1.02);
+            filter: grayscale(100%) contrast(140%) brightness(1.2);
+        }
+    }
+}
+
+
+/* Обновляем стили для боксерских эффектов */
+
+.boxing-effects {
+    display: none;
+}
+
+.glove-effect {
+    display: none;
+}
+
+
+/* Добавляем стили для адреса контракта */
+
+.contract-address {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 4s;
+}
+
+.contract-address .label {
+    font-family: 'Black Ops One', cursive;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contract-address .address {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contract-address .address:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Медиа-запросы для адаптивности */
+
+@media screen and (max-width: 768px) {
+    .contract-address {
+        bottom: 20px;
+    }
+    .contract-address .label {
+        font-size: 1rem;
+    }
+    .contract-address .address {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contract-address {
+        bottom: 15px;
+    }
+    .contract-address .label {
+        font-size: 0.8rem;
+    }
+    .contract-address .address {
+        font-size: 0.7rem;
+        padding: 6px 8px;
+    }
+}
+
+
+/* Media queries for very small devices */
+
+@media screen and (max-width: 320px) {
+    .title {
+        font-size: 2rem;
+    }
+    .slogan {
+        font-size: 20px;
+    }
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    .contract-address .address {
+        font-size: 0.6rem;
+        padding: 4px 6px;
+    }
+}
+
+
+/* Add orientation specific styles */
+
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .title {
+        font-size: 2.5rem;
+        margin: 5px 0;
+    }
+    .slogan {
+        font-size: 20px;
+        margin: 5px auto;
+    }
+    .stats-container {
+        bottom: 10px;
+    }
+    .contract-address {
+        bottom: 10px;
+    }
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 15px 40px;
+    font-family: 'Black Ops One', cursive;
+    font-size: 24px;
+    color: #ffffff;
+    background: linear-gradient(45deg, #000000, #333333);
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 4.3s;
+}
+
+.buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #333333, #000000);
+}
+
+.buy-button:active {
+    transform: translateY(1px);
+}
+
+
+/* Add shine effect */
+
+.buy-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient( to bottom right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.buy-button:hover::after {
+    animation: shine 1.5s ease-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 768px) {
+    .buy-button {
+        padding: 12px 30px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .buy-button {
+        padding: 10px 25px;
+        font-size: 18px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .buy-button {
+        padding: 8px 20px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
+
+
+/* Add these styles at the beginning of your CSS file */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-logo {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(255, 215, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 2px 8px rgba(255, 215, 0, 0.5));
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links .buy-button {
+    margin: 0;
+    padding: 10px 25px;
+    font-size: 1rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+
+/* Update your hero section to account for navbar */
+
+.hero-section {
+    padding-top: 100px;
+    /* Add padding to prevent content from hiding behind navbar */
+}
+
+
+/* Add responsive styles for the navbar */
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+    .nav-links.active {
+        left: 0;
+    }
+    .nav-links li {
+        margin: 1rem 0;
+    }
+    .nav-links .buy-button {
+        margin-top: 1rem;
+    }
+}
+
+
+/* Add this to your existing media queries */
+
+@media screen and (max-width: 480px) {
+    .nav-logo {
+        height: 35px;
+    }
+    .navbar {
+        padding: 1rem 5%;
+    }
+}
+
+
+/* Add these styles for the About section */
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 5%;
+    background-color: #fff;
+    gap: 4rem;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 450px;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+    font-family: 'GoodTimingBD', sans-serif;
+}
+
+.about-text>p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.feature {
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #000;
+    font-family: 'GoodTimingBD', sans-serif;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+
+/* Media Queries for About section */
+
+@media screen and (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        padding: 3rem 2rem;
+        gap: 2rem;
+    }
+    .about-text {
+        text-align: center;
+    }
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-section {
+        padding: 2rem 1rem;
+    }
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    .about-text>p {
+        font-size: 1rem;
+    }
+    .feature {
+        padding: 1rem;
+    }
+}
+
+
+/* Add these styles for How to Buy section */
+
+.how-to-buy-section {
+    padding: 5rem 5%;
+    background-color: #F9F7EB;
+    text-align: center;
+}
+
+.how-to-buy-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #000;
+    font-family: 'GoodTimingBD', sans-serif;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    flex: 1;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'GoodTimingBD', sans-serif;
+}
+
+.step-content {
+    margin-top: 1.5rem;
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #000;
+    font-family: 'GoodTimingBD', sans-serif;
+}
+
+.step-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.step-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.step-list li {
+    padding: 0.5rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.step-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #000;
+}
+
+.step-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.step-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Media Queries for How to Buy section */
+
+@media screen and (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+    .step-card {
+        width: 100%;
+    }
+    .how-to-buy-section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .how-to-buy-section h2 {
+        font-size: 2rem;
+    }
+    .step-content h3 {
+        font-size: 1.3rem;
+    }
+    .step-card {
+        padding: 1.5rem;
+    }
+    .step-button {
+        padding: 10px 25px;
+    }
+}
+
+
+/* Add these styles for Tokenomics section */
+
+.tokenomics-section {
+    padding: 5rem 5%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tokenomics-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #000;
+    font-family: 'GoodTimingBD', sans-serif;
+}
+
+.tokenomics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.tokenomics-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.token-detail {
+    padding: 2rem;
+    background: #f8f8f8;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.token-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.token-detail h3 {
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 1rem;
+    font-family: 'GoodTimingBD', sans-serif;
+}
+
+.token-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.token-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.distribution-chart {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.chart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chart-bar {
+    height: 40px;
+    background: linear-gradient(45deg, #000000, #333333);
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.chart-bar span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: bold;
+}
+
+.chart-item p {
+    min-width: 120px;
+    text-align: left;
+    color: #666;
+    font-size: 1rem;
+}
+
+
+/* Media Queries for Tokenomics section */
+
+@media screen and (max-width: 768px) {
+    .tokenomics-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .tokenomics-info {
+        width: 100%;
+    }
+    .distribution-chart {
+        width: 100%;
+    }
+    .chart-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    .chart-item p {
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+    .chart-bar {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tokenomics-section {
+        padding: 3rem 1rem;
+    }
+    .tokenomics-section h2 {
+        font-size: 2rem;
+    }
+    .token-detail {
+        padding: 1.5rem;
+    }
+    .token-number {
+        font-size: 2rem;
+    }
+}
+
+
+/* Update footer styles */
+
+.footer {
+    width: 100%;
+    background-color: #000;
+    padding: 3rem 5%;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+/* Update social buttons container */
+
+.social-buttons {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* Responsive footer */
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 2rem 5%;
+    }
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+
+/* Update the color scheme and styles */
+
+:root {
+    --primary: #FFD700;
+    /* Gold */
+    --secondary: #000000;
+    --accent: #FF4D4D;
+    --text: #ffffff;
+    --background: #1a1a1a;
+    --heading-font: 'Teko', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+    --text-primary: #ffffff;
+    /* Main text color */
+    --text-secondary: #ffffff;
+    /* Secondary text color */
+    --text-muted: rgba(255, 255, 255, 0.8);
+    /* Muted text color */
+    --title-color: var(--primary);
+    /* Keep titles gold */
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--body-font);
+}
+
+
+/* Update navbar style */
+
+.navbar {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+    border-bottom: 2px solid var(--primary);
+}
+
+.nav-logo {
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3);
+    letter-spacing: 2px;
+    font-family: var(--heading-font);
+}
+
+.nav-links a {
+    font-size: 1.3rem;
+    color: var(--text);
+    text-transform: uppercase;
+}
+
+.nav-links a::after {
+    background: var(--primary);
+    height: 3px;
+}
+
+
+/* Update hero section */
+
+.hero-section {
+    background: linear-gradient(135deg, var(--background) 0%, #2a2a2a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('noise.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 0px var(--secondary), 6px 6px 0px rgba(255, 215, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    color: var(--text);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Update buttons style */
+
+.buy-button,
+.step-button {
+    background: var(--primary);
+    color: var(--secondary);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.buy-button::before,
+.step-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.buy-button:hover::before,
+.step-button:hover::before {
+    left: 100%;
+}
+
+
+/* Update sections style */
+
+.about-section,
+.how-to-buy-section,
+.tokenomics-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.about-section h2,
+.how-to-buy-section h2,
+.tokenomics-section h2 {
+    color: var(--primary);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+
+/* Update cards style */
+
+.feature,
+.step-card,
+.token-detail {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary);
+    backdrop-filter: blur(10px);
+}
+
+.feature:hover,
+.step-card:hover,
+.token-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+
+/* Update chart style */
+
+.chart-bar {
+    background: linear-gradient(90deg, var(--primary) 0%, #FFA500 100%);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+
+/* Update footer style */
+
+.footer {
+    background: var(--secondary);
+    border-top: 2px solid var(--primary);
+}
+
+.social-button {
+    background: var(--primary);
+    color: var(--secondary);
+    font-weight: bold;
+    border: none;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+
+/* Add animation for text */
+
+@keyframes glow {
+    0% {
+        text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3);
+    }
+}
+
+.nav-logo,
+h1,
+h2 {
+    animation: glow 2s infinite;
+}
+
+
+/* Add responsive styles */
+
+@media screen and (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    .nav-logo {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hero-image,
+    .about-image {
+        max-width: 450px;
+    }
+    .hero-image img,
+    .about-image img {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero-image,
+    .about-image {
+        max-width: 400px;
+    }
+    .hero-image img,
+    .about-image img {
+        width: 350px;
+    }
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-image,
+    .about-image {
+        max-width: 350px;
+    }
+    .hero-image img,
+    .about-image img {
+        width: 300px;
+    }
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-image,
+    .about-image {
+        max-width: 300px;
+    }
+    .hero-image img,
+    .about-image img {
+        width: 250px;
+    }
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Update text colors throughout */
+
+p,
+li,
+.nav-links a {
+    color: var(--text-primary);
+}
+
+.hero-text p,
+.about-text p,
+.feature p,
+.step-content p,
+.token-description,
+.step-list li,
+.chart-item p {
+    color: var(--text-secondary);
+}
+
+.token-detail h3,
+.feature h3,
+.step-content h3 {
+    color: var(--primary);
+}
+
+
+/* Keep titles gold */
+
+.hero-text h1,
+.about-section h2,
+.how-to-buy-section h2,
+.tokenomics-section h2 {
+    color: var(--primary);
+}
+
+
+/* Update card backgrounds */
+
+.feature,
+.step-card,
+.token-detail {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+/* Update section backgrounds */
+
+.about-section,
+.how-to-buy-section,
+.tokenomics-section {
+    background: linear-gradient(135deg, var(--background) 0%, #2a2a2a 100%);
+}
+
+
+/* Update token number color */
+
+.token-number {
+    color: var(--primary);
+}
+
+
+/* Update list arrow color */
+
+.step-list li::before {
+    color: var(--primary);
+}
+
+
+/* Add fade-in animation styles */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Add animation delays for sequential fade-ins */
+
+.fade-in-delay-1 {
+    transition-delay: 0.2s;
+}
+
+.fade-in-delay-2 {
+    transition-delay: 0.4s;
+}
+
+.fade-in-delay-3 {
+    transition-delay: 0.6s;
+}
+
+
+/* Add styles for the big buy button */
+
+.big-buy-button-container {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.big-buy-button {
+    display: inline-block;
+    background: linear-gradient(-45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
+    background-size: 400% 400%;
+    color: #000000;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    padding: 20px 60px;
+    font-size: 2rem;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    animation: gradientBG 3s ease infinite;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: var(--heading-font);
+    letter-spacing: 2px;
+}
+
+.big-buy-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+    animation: gradientBG 1s ease infinite;
+}
+
+.big-buy-button:active {
+    transform: translateY(2px) scale(0.98);
+}
+
+.big-buy-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(-45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
+    background-size: 400% 400%;
+    border-radius: 50px;
+    z-index: -1;
+    animation: gradientBG 3s ease infinite;
+    filter: blur(15px);
+}
+
+
+/* Add responsive styles for big buy button */
+
+@media screen and (max-width: 768px) {
+    .big-buy-button {
+        padding: 15px 40px;
+        font-size: 1.5rem;
+    }
+    .big-buy-button-container {
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .big-buy-button {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+    }
+    .big-buy-button-container {
+        margin-top: 2rem;
+    }
+}
+
+
+/* Add fixed buy button styles */
+
+.fixed-buy-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background: linear-gradient(-45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
+    background-size: 400% 400%;
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+    animation: gradientBG 3s ease infinite;
+    transition: all 0.3s ease;
+}
+
+.fixed-buy-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 30px rgba(255, 215, 0, 0.6);
+}
+
+
+/* Responsive styles for fixed button */
+
+@media screen and (max-width: 768px) {
+    .fixed-buy-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fixed-buy-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Add social button styles */
+
+.social-button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 12px 25px;
+    background: linear-gradient(-45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
+    background-size: 400% 400%;
+    border-radius: 25px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: gradientBG 3s ease infinite;
+}
+
+.social-button img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.social-button span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    animation: gradientBG 1s ease infinite;
+}
+
+
+/* Update social buttons container */
+
+.social-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+
+/* Responsive styles for social buttons */
+
+@media screen and (max-width: 768px) {
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .social-button {
+        width: 200px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .social-button {
+        padding: 10px 20px;
+    }
+    .social-button img {
+        width: 20px;
+        height: 20px;
+    }
+    .social-button span {
+        font-size: 0.9rem;
+    }
+}
